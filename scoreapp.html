@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+
+        <header>
+            <h1><span>Tournament: </span>Amsterdam Ultimate Autumn</h1>
+        <nav>
+            <ul>
+                <li><a href="#/schedule">Schedule</a></li>
+                <li><a href="#/game">Game</a></li>
+                <li><a href="#/ranking">Ranking</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <article data-route="schedule">
+            <header>
+                <h1>Pool A - Schedule</h1>
+            </header>
+            <table>
+                <tr>
+                    <th>Monday 18 March</th>
+                    <th>Team</th>
+                    <th>Result</th>
+                    <th>Team</th>
+                </tr>
+
+                <tr>
+                    <td data-bind="date"></td>
+                    <td data-bind="team1"></td>
+                    <td data-bind="team1score"></td>
+                    <td data-bind="team2"></td>
+                    <td data-bind="team2score"></td>
+                </tr>
+            </table>
+        </article>
+
+        <article data-route="ranking">
+
+        </article>
+
+        <article data-route="game">
+        </article>
+
+    <!-- Application -->
+    <script src="javascript/scoreapp.js"></script>
+
+
+<pre>
+<header>Json testdata</header>
+var game = [
+    { score: "1", team1: "Boomsquad", team1Score: "1", team2: "Burning Snow", team2Score: "0"},
+    { score: "2", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "0"},
+    { score: "3", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "1"},
+    { score: "4", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "2"},
+    { score: "5", team1: "Boomsquad", team1Score: "3", team2: "Burning Snow", team2Score: "2"},
+    { score: "6", team1: "Boomsquad", team1Score: "4", team2: "Burning Snow", team2Score: "2"},
+    { score: "7", team1: "Boomsquad", team1Score: "5", team2: "Burning Snow", team2Score: "2"},
+    { score: "8", team1: "Boomsquad", team1Score: "5", team2: "Burning Snow", team2Score: "3"},
+    { score: "9", team1: "Boomsquad", team1Score: "6", team2: "Burning Snow", team2Score: "3"},
+    { score: "10", team1: "Boomsquad", team1Score: "7", team2: "Burning Snow", team2Score: "3"},
+    { score: "11", team1: "Boomsquad", team1Score: "7", team2: "Burning Snow", team2Score: "4"},
+    { score: "12", team1: "Boomsquad", team1Score: "8", team2: "Burning Snow", team2Score: "4"},
+    { score: "13", team1: "Boomsquad", team1Score: "8", team2: "Burning Snow", team2Score: "5"},
+    { score: "14", team1: "Boomsquad", team1Score: "8", team2: "Burning Snow", team2Score: "6"},
+    { score: "15", team1: "Boomsquad", team1Score: "9", team2: "Burning Snow", team2Score: "6"},
+    { score: "16", team1: "Boomsquad", team1Score: "9", team2: "Burning Snow", team2Score: "7"},
+    { score: "17", team1: "Boomsquad", team1Score: "10", team2: "Burning Snow", team2Score: "7"},
+    { score: "18", team1: "Boomsquad", team1Score: "11", team2: "Burning Snow", team2Score: "7"},
+    { score: "19", team1: "Boomsquad", team1Score: "12", team2: "Burning Snow", team2Score: "7"},
+    { score: "20", team1: "Boomsquad", team1Score: "13", team2: "Burning Snow", team2Score: "7"},
+    { score: "21", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "7"},
+    { score: "22", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "8"},
+    { score: "23", team1: "Boomsquad", team1Score: "15", team2: "Burning Snow", team2Score: "8"}
+    ];
+</pre>
+
+
+    </body>
+</html>
