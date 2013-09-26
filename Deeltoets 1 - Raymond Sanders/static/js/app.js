@@ -1,10 +1,10 @@
 var FTA = FTA || {};
 
 (function () {
-	// [ Data objecten ]
+	// [ Data objecten ] : Schedule, Game, Ranking
 	FTA.schedule = {
 		title:'Pool A - Schedule',
-		items: [
+		items: [ //Array with properties and values
 				{ date: "Monday, 9:00am", team1: "Chasing", team1Score: "13", team2: "Amsterdam Money Gang", team2Score: "9"},
     			{ date: "Monday, 9:00am", team1: "Boomsquad", team1Score: "15", team2: "Beast Amsterdam", team2Score: "11"},
     			{ date: "Monday, 10:00am", team1: "Beast Amsterdam", team1Score: "14", team2: "Amsterdam Money Gang", team2Score: "12"},
@@ -61,7 +61,7 @@ var FTA = FTA || {};
 	//	[ Controller Init ]
 	FTA.controller = {
 		init: function () {
-			// Initialize router
+			// Initialize the router object
 			FTA.router.init();
 		}
 	};
@@ -81,6 +81,10 @@ var FTA = FTA || {};
 			    '/ranking': function() {
 			    	FTA.section.ranking();
 			    },
+
+			    '*': function() {
+			    	FTA.section.schedule();
+			    }
 			});
 		},
 
@@ -89,7 +93,7 @@ var FTA = FTA || {};
                 sections = qwery('section[data-route]'),
                 section = qwery('[data-route=' + route + ']')[0];  
 
-            // Show active section, hide all other
+            // Shows section by changing class to active or hides by removing active
             if (section) {
             	for (var i=0; i < sections.length; i++){
             		sections[i].classList.remove('active');
@@ -97,7 +101,7 @@ var FTA = FTA || {};
             	section.classList.add('active');
             }
 
-            // Default route
+            // If different from route add class active
             if (!route) {
             	sections[0].classList.add('active');
             }
@@ -107,6 +111,8 @@ var FTA = FTA || {};
 
 	//	[ Section ]
 	FTA.section = {
+		// Transparency makes data-bind possible (link with JSON)
+		// qwery finds and selects DOM elements
 		schedule: function () {
 			Transparency.render(qwery('[data-route=schedule')[0], FTA.schedule);
 			FTA.router.change();
@@ -122,9 +128,10 @@ var FTA = FTA || {};
 			FTA.router.change();
 		}
 	}
-	//	[ DOM ready ]
+
+	//	[ DOM ready ] Does not execute if the page is not loaded
 	domready(function () {
-		// Kickstart application
+		// Starts Application
 		FTA.controller.init();
 	});
 	
