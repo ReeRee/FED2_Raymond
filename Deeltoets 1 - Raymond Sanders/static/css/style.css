@@ -1,0 +1,46 @@
+* {
+	font-family: sans-serif;
+}
+
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+
+ul > li {
+	float: left;
+}
+
+ul > li:nth-of-type(2),
+ul > li:nth-of-type(3)
+ {
+	margin-left: 10px;
+}
+
+li > a {
+	display: block;
+	width: 100px;
+	padding: 20px 0px 20px 0px;
+	color: #555;
+	text-align: center;
+	border: 1px solid #555;
+	text-decoration: none;
+}
+
+/* Content section */
+section#content {
+	clear:left;
+}
+	#content > section {
+		display:none;
+	}
+	#content > section.active {
+		display:block;
+	}
+	section h1 {
+		margin-bottom: .5em;
+	}
+

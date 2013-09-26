@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>FTA</title>
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1>Frisbee Tournament App</h1>
+		<nav>
+			<ul>
+				<li><a href="#/schedule">Schedule</a></li>
+				<li><a href="#/game">Game</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+		    </ul>
+		</nav>
+	</header>
+
+	<section id="content">
+		<section data-route="schedule" class="active">
+			<h1 data-bind="title"></h1>
+			<table>
+				<tr>
+					<th>Datum</th>
+					<th>Team 1</th>
+					<th>Result</th>
+					<th>Team 2</th>
+				</tr>
+			<tbody data-bind="items">
+				<tr>
+					<!--Vanaf hier wordt javascript weer binnen geladen. -->
+					<td data-bind="date"></td>
+					<td data-bind="team1"></td>
+					<td> <span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+					<td data-bind="team2"></td>
+				</tr>
+			</tbody>
+			</table>
+		</section>
+
+		<section data-route="game">
+			<h1 data-bind="title"></h1>
+			<table>
+				<tr>
+					<th>Score</th>
+					<th>Team 1</th>
+					<th>Result</th>
+					<th>Team 2</th>
+				</tr>
+				<tbody data-bind="items">
+					<td data-bind="score"></td>
+					<td data-bind="team1"></td>
+					<td> <span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+					<td data-bind="team2"></td>
+				</tbody>	
+			</table>
+		</section>
+
+		<section data-route="ranking">
+			<h1 data-bind="title"></h1>
+			<table>
+				<tr>
+					<th>Team</th>
+					<th>Wins</th>
+					<th>Losts</th>
+					<th>Sw</th>
+					<th>Sl</th>
+					<th>Pw</th>
+					<th>Pl</th>
+				</tr>
+				<tbody data-bind="items">
+					<td data-bind="team"></td>
+					<td data-bind="Win"></td>
+					<td> <span data-bind="Lost"></span></td>
+					<td><span data-bind="Sw"></span></td>
+					<td data-bind="Sl"></td>
+					<td data-bind="Pw"></td>
+					<td data-bind="Pl"></td>
+				</tbody>	
+			</table>
+		</section>
+	</section>
+
+	<!--
+	<section id="content" class="col">
+		<section data-route="schedule" class="active">
+			<h1 data-bind="title"></h1>
+			<p data-bind="description"></p>
+			 <section data-bind="items">
+			    <section>
+			      <h1 data-bind="title"></h1>
+			      <p data-bind="description"></p>
+			    </section>
+			  </section>
+		</section>
+
+		<section data-route="game">
+			<h1 data-bind="title"></h1>
+			<p data-bind="description"></p>
+		</section>
+
+		<section data-route="ranking">
+			<h1 data-bind="title"></h1>
+			<p data-bind="description"></p>
+		</section>
+	</section>
+-->
+
+	<!-- Libs -->
+	<script src="static/js/lib/routie.min.js"></script>
+	<script src="static/js/lib/ready.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/qwery.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+
+	<!-- Application -->
+	<script src="static/js/app.js"></script>
+	
+</body>
+</html>
